@@ -11,7 +11,11 @@ int registrar() //função responsavel por cadastrar os usuários no sistema
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
+	char escolha[10];
 	//fim criação de variáveis/string
+	
+ do{
+	system("cls");
 	
 	printf("Cadastrar CPF: "); //coletando informação do usuário
 	scanf("%s",cpf); //%s refere-se a string
@@ -60,9 +64,16 @@ int registrar() //função responsavel por cadastrar os usuários no sistema
 	fprintf(file,cargo);
 	fclose(file);
 	
-	system("pause");
-	
+	printf("\n\nDeseja inserir mais um usúario? (sim/não): ");
+	scanf("%s",escolha);
+     if (strcmp(escolha, "sim") == 0 || strcmp(escolha, "Sim") == 0 || strcmp(escolha, "SIM") == 0){
+	     
+	 } else {
+		 return 0;
+	 }
+   } while (1);
 }
+
 int consultar()
 {
    setlocale(LC_ALL, "Portuguese");//definindo linguagem
@@ -183,7 +194,7 @@ int main()
 		break;
 		
 		case 4:
-		printf("Obrigado po utilizar o sistema!\n");
+		printf("\nObrigado por utilizar o sistema!\n");
 		return 0;
 		break;
 		
@@ -194,5 +205,5 @@ int main()
 		//fim da seleção
 	  }
     }
-		
+	return 0;	
 }
